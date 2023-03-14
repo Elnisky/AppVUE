@@ -1,15 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>{{titulo}}</h1>
+  <fieldset>
+    <legend>Itens</legend>
+    <ul>
+      <li v-for="item in itens" :key = item.id>
+        <p>
+          {{ item.id }} - {{ item.nome }}
+            <button v-if="item.finalizado">Excluir</button>
+            <button v-else>Editar</button>
+        </p>
+      </li>
+    </ul>
+  </fieldset>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return{
+      titulo: "Atividades",
+      itens: [
+        {id: 1, nome: "Item 001", finalizado: false},
+        {id: 2, nome: "Item 002", finalizado: true},
+        {id: 3, nome: "Item 003", finalizado: true}
+      ]
+    }
   }
 }
 </script>
