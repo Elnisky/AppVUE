@@ -8,10 +8,21 @@
               <router-link to="/" class="nav-link px-3">Novo Contato</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/view" class="nav-link">Listar Contatos</router-link>
+              <router-link to="/view" class="nav-link px-3">Listar Contatos</router-link>
             </li>
+            <li class="nav-item">
+              <router-link to="/edit" class="nav-link px-3">Editar Contatos</router-link>
+            </li>            
           </ul>
         </div>
       </nav>
+
+    <!-- Router view -->
+    <div class="container mt-5">
+      <router-view>
+        
+      </router-view>
+    </div>
   </div>
+
 </template>
