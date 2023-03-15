@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
-import CreateComponent from "@components/CreateComponent.vue";
-import ListComponent from "@components/ListComponent.vue";
-import EditComponent from "@components/EditComponent.vue";
+import CreateComponent from "@/components/CreateComponent.vue";
+import ListComponent from "@/components/ListComponent.vue";
+import EditComponent from "@/components/EditComponent.vue";
 
 const routes = [
     {

@@ -1,7 +1,5 @@
 <template>
-    <h1>
-        Edit
-    </h1>
+    <h1>Edit</h1>
 </template>
 
 <script>
