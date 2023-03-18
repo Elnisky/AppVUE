@@ -1,16 +1,24 @@
 <template>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h1>Novo Contato</h1>
+            <h1>Novo usuário</h1>
             <form @submit.prevent="handleSubmitForm">
                 <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input type="text" class="form-control" v-model="contato.nome" required>
+                    <input type="text" class="form-control" v-model="usuario.nome" required>
                 </div>
                 <div class="form-group">
-                    <label for="idade">Idade</label>
-                    <input type="number" class="form-control" v-model="contato.idade" required>
+                    <label for="login">Login</label>
+                    <input type="text" class="form-control" v-model="usuario.login" required>
                 </div>                
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="Password" class="form-control" v-model="usuario.senha" required>
+                </div>   
+                <div class="form-group">
+                    <label for="confirmasenha">Confirmar senha</label>
+                    <input type="Password" class="form-control" v-model="usuario.confirmasenha" required>
+                </div>                                
                 <div class="form-group mt-3">
                     <button class="btn btn-success btn-block w-100" type="submit">Confirmar</button>
                 </div>
@@ -25,21 +33,27 @@ import axios from 'axios';
 export default{
     data(){
         return {
-            contato: {
+            usuario: {
                 id: '',
                 nome: '',
-                idade: ''
+                login: '',
+                senha: '',
+                confirmasenha: ''
             }
         };
     },
     methods: {
         handleSubmitForm(){
-            let apiURL = 'http://localhost:3000/contatos';
-            axios.post(apiURL, this.contato).then(() =>{
-                alert('salvo com sucesso');// this.@router.push
-            }).catch(error => {
-                console.log(error);
-            })
+            let apiURL = 'http://localhost:3000/usuarios';
+            if (this.usuario.senha == this.usuario.confirmasenha) {
+                axios.post(apiURL, this.usuario).then(() =>{
+                    alert('salvo com sucesso');
+                }).catch(error => {
+                    console.log(error);
+                })
+            }
+            else
+                alert('senha e confirmação não conferem');
         }
     }
 }

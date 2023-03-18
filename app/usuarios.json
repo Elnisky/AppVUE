@@ -1,0 +1,11 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Leandro2",
+      "login": "Elnisky2",
+      "senha": "123",
+      "confirmasenha": "123"
+    }
+  ]
+}
